@@ -21,7 +21,7 @@
     </bean>
     <!--过滤静态资源-->
     <mvc:resources location="/css/" mapping="/css/**" />
-    <mvc:resources location="/images/" mapping="/images/**" />
+    <mvc:resources location="/img/" mapping="/img/**" />
     <mvc:resources location="/js/" mapping="/js/**" />	
 	<!-- 配置自定义转换器，默认的并没有失效，只是多加了一个自定义的转换器 -->
 	<!-- 
