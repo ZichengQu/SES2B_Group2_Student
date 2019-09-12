@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+        
+    <bean id="admin" class="com.bean.Admin"></bean>
+	<bean id="advisor" class="com.bean.Advisor"></bean>
+	<bean id="attendance" class="com.bean.Attendance"></bean>
+	<bean id="comment" class="com.bean.Comment"></bean>
+	<bean id="confirmationEmail" class="com.bean.ConfirmationEmail"></bean>
+	<bean id="message" class="com.bean.Message"></bean>
+	<bean id="reminderEmail" class="com.bean.ReminderEmail"></bean>
+	<bean id="report" class="com.bean.Report"></bean>
+	<bean id="room" class="com.bean.Room"></bean>
+	<bean id="session" class="com.bean.Session"></bean>
+	<bean id="skillSet" class="com.bean.SkillSet"></bean>
+	<bean id="student" class="com.bean.Student"></bean>
+	<bean id="studentProfile" class="com.bean.StudentProfile"></bean>
+	<bean id="waitingList" class="com.bean.WaitingList"></bean>
+	<bean id="workShop" class="com.bean.WorkShop"></bean>
+	<bean id="studentService" class="com.service.StudentService"></bean>
+	<bean id="studentDao" class="com.dao.StudentDao"></bean>
+</beans>
