@@ -8,10 +8,20 @@
  
 <link href="css/login.css" rel="stylesheet"
 	type="text/css">
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript">
 	$(function(){
+		var msg = strConvert(function(){/*
+${msg} 
+	        */});;
+	    console.log(msg);
+		if(msg != null&&msg.length!=2){
+			alert(msg);
+		}
 		
+		function strConvert(fn){
+		    return fn.toString().split('\n').slice(1,-1).join('\n')+'\n';
+		}
 	});
 	//<form action="MyInfo.html" method="get"><!--<form action="StuLogin" method="post">-->
 </script>

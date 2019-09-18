@@ -12,7 +12,7 @@ import com.service.StudentService;
 
 @Controller
 @RequestMapping("/student")
-@SessionAttributes(value = {"student","profile"})
+@SessionAttributes(value = {"student","profile","msg"})
 public class StudentController {
 
 	@Resource(name="studentService")
@@ -21,8 +21,16 @@ public class StudentController {
 	@RequestMapping("/login")
     public String stuLogin(Integer username, String password,Model model){
         Student student = studentService.login(username,password);
-        model.addAttribute("student",student);
-        model.addAttribute("profile",student.getStudentProfile());
-        return "redirect:/MyInfo.jsp";
+        if(student!=null) {
+        	model.addAttribute("msg",null);
+        	model.addAttribute("student",student);
+            model.addAttribute("profile",student.getStudentProfile());
+            return "redirect:/MyInfo.jsp";
+        } else {
+        	model.addAttribute("msg","Invalid account or password. Please try again");
+        	return "redirect:/stu_login.jsp";
+		}
+        
+        
     }
 }
