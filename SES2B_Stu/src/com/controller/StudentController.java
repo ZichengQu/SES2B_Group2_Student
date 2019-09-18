@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.alibaba.fastjson.JSON;
 import com.bean.Student;
@@ -63,6 +64,11 @@ public class StudentController {
 		} else {
 			return "fail";
 		}
-		
     }
+	
+	@RequestMapping("/logoff")
+	public String stuLogoff(SessionStatus status) {
+		status.setComplete();
+		return "redirect:/stu_login.jsp";
+	}
 }

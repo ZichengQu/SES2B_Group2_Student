@@ -239,7 +239,7 @@ function strConvert(fn){
 				<a href="Wp_book.html " class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
 				<a href="# " class="header_liBlock "></a>
 				<a href="# " style="color:#444444;font-weight:600; " class="header_liBlock1 ">${student.firstName } ${student.lastName }</a>
-				<a href="stu_login.jsp" class="header_liBlock1 "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
+				<a href="student/logoff" class="header_liBlock1 "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
 				<div style="clear: both; "></div>
 			</div>
 			<div class="header_rightBlock ">
