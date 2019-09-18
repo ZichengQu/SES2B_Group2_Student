@@ -12,10 +12,9 @@
 <script type="text/javascript">
 	$(function(){
 		var msg = strConvert(function(){/*
-${msg} 
-	        */});;
-	    console.log(msg);
-		if(msg != null&&msg.length!=2){
+${msg}
+	        */});
+		if(msg != null&&msg.length!=1){
 			alert(msg);
 		}
 		
