@@ -9,6 +9,7 @@
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
         
+    <!-- Bean -->
     <bean id="admin" class="com.bean.Admin"></bean>
 	<bean id="advisor" class="com.bean.Advisor"></bean>
 	<bean id="attendance" class="com.bean.Attendance"></bean>
@@ -24,6 +25,8 @@
 	<bean id="studentProfile" class="com.bean.StudentProfile"></bean>
 	<bean id="waitingList" class="com.bean.WaitingList"></bean>
 	<bean id="workShop" class="com.bean.WorkShop"></bean>
+	<!-- Service -->
 	<bean id="studentService" class="com.service.StudentService"></bean>
+	<!-- Dao -->
 	<bean id="studentDao" class="com.dao.StudentDao"></bean>
 </beans>
