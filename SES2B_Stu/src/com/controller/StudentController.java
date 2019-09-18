@@ -39,14 +39,6 @@ public class StudentController {
         	model.addAttribute("student",student);
         	StudentProfile studentProfile = student.getStudentProfile();
         	model.addAttribute("profile",studentProfile);
-//        	if(studentProfile!=null) {
-//        		model.addAttribute("profile",studentProfile);
-//        	}else {
-//        		StudentProfile newProfile = studentService.newProfile(student);
-//        		System.out.println("Flag: "+newProfile);
-//        		newProfile.setEduBgMark("[-1,-1,-1]");
-//        		model.addAttribute("profile",newProfile);
-//        	}
             //return JSON.parse("{result:'success'}");
             return "success";
         } else {
