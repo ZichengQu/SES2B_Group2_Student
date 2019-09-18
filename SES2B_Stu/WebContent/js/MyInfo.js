@@ -10,7 +10,6 @@ $(function(){
 		$("#save").show();
 		$("#edit").hide();
 		$("#tips").show();
-		
 		dataViewToEdit();
 		educationBackgroundViewToEdit();
 	});
@@ -36,6 +35,11 @@ function dataEditToView(){
 	var e_year = $('#e_year option:selected').val();
 	var e_status = $("input[name='e_status']:checked").val();
 	var e_language = $('#e_language option:selected').val();
+	/* if(e_language=="ChineseM"){
+		e_language = "Chinese (Mandarin)";
+	}else if(e_language=="ChineseT"){
+		e_language = "Chinese (Tranditional)";
+	} */
 	var e_origin = $('#e_origin option:selected').val();
 	var e_background = $('#e_background').val();
 	$("#v_name").text(e_name);
@@ -61,7 +65,7 @@ function dataViewToEdit(){
 	$("input[name=e_degree][value="+v_degree+"]").attr("checked",true);
 	$("#e_year [value="+v_year+"]").attr("selected","selected");
 	$("input[name=e_status][value="+v_status+"]").attr("checked",true);
-	$("#e_language [value="+v_language+"]").attr("selected","selected");
+	$("#e_language [value='"+v_language+"']").attr("selected","selected");
 	$("#e_origin [value="+v_origin+"]").attr("selected","selected");
 	$("#e_background").val(v_background);
 }

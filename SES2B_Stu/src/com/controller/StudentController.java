@@ -12,7 +12,7 @@ import com.service.StudentService;
 
 @Controller
 @RequestMapping("/student")
-@SessionAttributes(value = {"currentStudent"})
+@SessionAttributes(value = {"student","profile"})
 public class StudentController {
 
 	@Resource(name="studentService")
@@ -21,7 +21,8 @@ public class StudentController {
 	@RequestMapping("/login")
     public String stuLogin(Integer username, String password,Model model){
         Student student = studentService.login(username,password);
-        model.addAttribute("currentStudent",student);
-        return "redirect:/test.jsp";
+        model.addAttribute("student",student);
+        model.addAttribute("profile",student.getStudentProfile());
+        return "redirect:/MyInfo.jsp";
     }
 }
