@@ -27,6 +27,9 @@
 			$('#myModal').on('shown.bs.modal', function () {
 		  	$('#myInput').focus();
 		});
+		$("#knowClick").click(function(){
+			window.location.href="select_WP.jsp";
+		});
 	});
 </script>
 <body>
@@ -112,7 +115,7 @@
 			<div id="container">
 				<!-- Button trigger modal -->
 		<button id="triggerBtn" style="display: none;" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"></button>
-		<a href="WorkshopList.html" class="btn btn-primary btn-lg active" role="button">Temporary link</a>
+		
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document" style="margin-left: 22%; margin-top: 15%">
@@ -130,7 +133,7 @@
 				<div style="font-size: 14px; letter-spacing: 0.4px; line-height: 18px; margin-top: 30px; font-weight: 450; color: #5f5f5f;">Please know that failing to turn up for your registered workshop is not fair to those on the waiting list. Repeat offenders (2 no-shows) may be barred from registering for workshops.</div>
 		      </div>
 		      <div class="modal-footer" style="border: none; padding-bottom: 32px;">
-		        <center><button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 16px; color: red; letter-spacing: 2px; width: 160px; border-color: #828282;">I know</button></center>
+		        <center><button id="knowClick" type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 16px; color: red; letter-spacing: 2px; width: 160px; border-color: #828282;">I know</button></center>
 		        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
 		      </div>
 		    </div>
