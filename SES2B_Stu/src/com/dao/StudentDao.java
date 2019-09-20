@@ -56,7 +56,6 @@ public class StudentDao extends HibernateDaoSupport{
 	public boolean delWorkShop(Student student,WorkShop workshop) {
 		try {
 			student.getWorkShops().remove(workshop);
-			workshop.getStudents().remove(student);
 			this.getHibernateTemplate().saveOrUpdate(student);
 			this.getHibernateTemplate().saveOrUpdate(workshop);
 		} catch (Exception e) {
