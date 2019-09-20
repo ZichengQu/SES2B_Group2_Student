@@ -277,8 +277,8 @@ function strConvert(fn){
 				<ul class="header_onList wid-4 ">
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-					<li><a href="MyInfo.html " class="hoverRed">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
-					<li><a href="Bookings.html " class="hoverRed">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
+					<li><a href="MyInfo.jsp" class="hoverRed">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
+					<li><a href="student/querySW" class="hoverRed">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
 				</ul>
 			</div>
 		</div>

@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.bean.Student;
 import com.bean.StudentProfile;
+import com.bean.WorkShop;
 import com.dao.StudentDao;
 import com.utils.CombineAttr;
 
@@ -39,6 +40,10 @@ public class StudentService {
 			studentProfile = this.newProfile(student);
 			studentProfile.setEduBgMark("[-1,-1,-1]");
 		}
+	}
+
+	public boolean delWorkShop(Student student,WorkShop workshop) {
+		return studentDao.delWorkShop(student,workshop);
 	}
 	
 }

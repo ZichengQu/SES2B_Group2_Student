@@ -9,6 +9,9 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import com.bean.Student;
 import com.bean.StudentProfile;
+import com.bean.WorkShop;
+
+import jdk.nashorn.internal.ir.Flags;
 
 public class StudentDao extends HibernateDaoSupport{
 	@Resource  
@@ -48,5 +51,19 @@ public class StudentDao extends HibernateDaoSupport{
 		this.getHibernateTemplate().saveOrUpdate(student);
 		this.getHibernateTemplate().saveOrUpdate(studentProfile);
 		return studentProfile;
+	}
+
+	public boolean delWorkShop(Student student,WorkShop workshop) {
+		try {
+			student.getWorkShops().remove(workshop);
+			workshop.getStudents().remove(student);
+			this.getHibernateTemplate().saveOrUpdate(student);
+			this.getHibernateTemplate().saveOrUpdate(workshop);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+		
 	}
 }
