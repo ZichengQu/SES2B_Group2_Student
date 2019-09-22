@@ -29,4 +29,6 @@
 	<bean id="studentService" class="com.service.StudentService"></bean>
 	<!-- Dao -->
 	<bean id="studentDao" class="com.dao.StudentDao"></bean>
+	<!-- Utils -->
+	<bean id="combineAttr" class="com.utils.CombineAttr"></bean>
 </beans>

@@ -16,9 +16,10 @@
 <script>
 $(function(){
 	onLoad();
-	
+	edit();
+	save();
 	$("#save").hide();
-	$("#edit").click(function(){
+	/* $("#edit").click(function(){
 		$("input[id^='e_']").show();
 		$("select[id^='e_']").show();
 		$("textarea[id^='e_']").show();
@@ -29,9 +30,9 @@ $(function(){
 		$("#tips").show();
 		dataViewToEdit();
 		educationBackgroundViewToEdit();
-	});
-	$("#save").click(function(){
-		$("input[id^='e_']").hide();
+	}); */
+	/*$("#save").click(function(){
+		 $("input[id^='e_']").hide();
 		$("select[id^='e_']").hide();
 		$("textarea[id^='e_']").hide();
 		$("[id^='e_']").hide();
@@ -41,8 +42,8 @@ $(function(){
 		$("#tips").hide();
 		
 		dataEditToView();
-		educationBackgroundEditToView();
-	});
+		educationBackgroundEditToView(); 
+	});*/
 });
 
 function dataEditToView(){
@@ -126,17 +127,99 @@ function onLoad(){
 	var marks=[$("#e_ielts"),$("#e_toefl"),$("#e_gre")];
 	var marksSpan=[$("#v_ieltsMark"),$("#v_toeflMark"),$("#v_greMark")];
 	var eduBgMark = ${profile.eduBgMark};
-	if(eduBgMark!=null&&eduBgMark.length!=0){
+	
+	if(eduBgMark!=null&&eduBgMark!=[-1]&&eduBgMark.length!=0){
+		//alert("length: "+eduBgMark.length);
 		for(var i = 0; i< eduBgMark.length; i++){
-			if(eduBgMark[i]!=""){
+			//alert("for: "+i);
+			if(eduBgMark[i]!=null&&eduBgMark[i]!=-1&&eduBgMark[i]!=""&&eduBgMark[i]!=undefined){
 				marksSpan[i].text(eduBgMark[i]);
+				//alert("if: "+i);
 			}else{
+				//alert("else: "+i);
 				marksSpan[i].text("");
 				marksTitle[i].hide();
 				marksSpan[i].hide();
 			}
 		}
 	}
+}
+function save(){
+	$("#save").click(function(){
+		var preferredFirstName = $("#e_name").val();
+		var gender = $("input[name='e_gender']:checked").val();
+		var degree = $("input[name='e_degree']:checked").val();
+		var year = $('#e_year option:selected').val();
+		var status = $("input[name='e_status']:checked").val();
+		var firstLanguage = $('#e_language option:selected').val();
+		var countryOfOrigin = $('#e_origin option:selected').val();
+		var eduBgMark1 = $("#e_ielts").val()==""?-1:$("#e_ielts").val();
+		var eduBgMark2 = $("#e_toefl").val()==""?-1:$("#e_toefl").val();
+		var eduBgMark3 = $("#e_gre").val()==""?-1:$("#e_gre").val();
+		var eduBgMark = eduBgMark1+','+eduBgMark2+','+eduBgMark3;
+		if(eduBgMark1!=-1&&isNaN(parseInt(eduBgMark1))){
+			alert("Please input a valid number for IELTS!");
+			return;
+		}else if(eduBgMark2!=-1&&isNaN(parseInt(eduBgMark2))){
+			alert("Please input a valid number for TOEFL!");
+			return;
+		}else if(eduBgMark3!=-1&&isNaN(parseInt(eduBgMark3))){
+			alert("Please input a valid number for GRE!");
+			return;
+		}else{
+			$("input[id^='e_']").hide();
+			$("select[id^='e_']").hide();
+			$("textarea[id^='e_']").hide();
+			$("[id^='e_']").hide();
+			$("span[id^='v_']").show();
+			$("#save").hide();
+			$("#edit").show();
+			$("#tips").hide();
+			
+			dataEditToView();
+			educationBackgroundEditToView();
+			
+			$.ajax({
+	            url:"student/save",
+	            contentType:"application/json;charset=UTF-8",
+	            data:'{"preferredFirstName":"'+preferredFirstName
+	            	+'","gender":"'+gender
+	            	+'","degree":"'+degree
+	            	+'","year":"'+year
+	            	+'","status":"'+status
+	            	+'","firstLanguage":"'+firstLanguage
+	            	+'","countryOfOrigin":"'+countryOfOrigin
+	            	+'","countryOfOrigin":"'+countryOfOrigin
+	            	+'","eduBgMark":"'+eduBgMark+'"}',
+	            dataType:"text",
+	            type:"post",
+	            success:function(data){
+	            	if(data == "success"){
+	            		alert("Update successfully");
+	            	} else{
+	            		alert("Update failed");
+	            	}
+	            }
+	        });
+		}
+    });
+}
+function edit(){
+	$("#edit").click(function(){
+		$("input[id^='e_']").show();
+		$("select[id^='e_']").show();
+		$("textarea[id^='e_']").show();
+		$("[id^='e_']").show();
+		$("span[id^='v_']").hide();
+		$("#save").show();
+		$("#edit").hide();
+		$("#tips").show();
+		dataViewToEdit();
+		educationBackgroundViewToEdit();
+	});
+}
+function strConvert(fn){
+    return fn.toString().split('\n').slice(1,-1).join('\n')+'\n';
 }
 </script>
 </head>
@@ -156,7 +239,7 @@ function onLoad(){
 				<a href="Wp_book.html " class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
 				<a href="# " class="header_liBlock "></a>
 				<a href="# " style="color:#444444;font-weight:600; " class="header_liBlock1 ">${student.firstName } ${student.lastName }</a>
-				<a href="stu_login.jsp" class="header_liBlock1 "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
+				<a href="student/logoff" class="header_liBlock1 "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
 				<div style="clear: both; "></div>
 			</div>
 			<div class="header_rightBlock ">
@@ -194,8 +277,8 @@ function onLoad(){
 				<ul class="header_onList wid-4 ">
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-					<li><a href="MyInfo.html " class="hoverRed">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
-					<li><a href="Bookings.html " class="hoverRed">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
+					<li><a href="MyInfo.jsp" class="hoverRed">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
+					<li><a href="student/querySW" class="hoverRed">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
 				</ul>
 			</div>
 		</div>
@@ -281,7 +364,7 @@ function onLoad(){
 				<td class="cell">
 					<img  src="img/email.png"/>
 				</td>
-				<td id="email" class="cell">${student.email }</td>
+				<td id="email" class="cell">${student.studentId }</td>
 			</tr>
 			<tr>
 				<td class="cell">
@@ -381,15 +464,15 @@ function onLoad(){
 					<td>
 						<span id="va_ielts">IELTS: </span>
 						<input id="e_ielts" style="display: none;" placeholder="Mark"/>
-						<span style="display: inline-block;" id="v_ieltsMark">9</span>
+						<span style="display: inline-block;" id="v_ieltsMark"></span>
 						</br>
 						<span id="va_toefl">TOEFL: </span>
 						<input id="e_toefl" style="display: none;" placeholder="Mark"/>
-						<span id="v_toeflMark">120</span>
+						<span id="v_toeflMark"></span>
 						</br>
 						<span id="va_gre">GRE: </span>
 						<input id="e_gre" style="display: none;" placeholder="Mark"/>
-						<span id="v_greMark">340</span>
+						<span id="v_greMark"></span>
 					</td>
 					<td>
 						
@@ -413,7 +496,6 @@ function onLoad(){
 
 			<input type="button" id="edit" value="EDIT" class="button"/>
 			<input type="button" id="save" value="SAVE" class="button"/>
-			
 <!-- 
 				<div class="hh">1</div>
 				<div class="hh">2</div> -->

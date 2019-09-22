@@ -28,7 +28,7 @@
 			<key column="reportId"></key>
 			<many-to-many class="com.bean.Attendance" column="attendanceId"/>
 		</set>
-		<set name="studentProfiles" table="t_report_studentProfile" lazy="false">
+		<set name="studentProfiles" table="t_report_studentProfile">
 			<key column="reportId"></key>
 			<many-to-many class="com.bean.StudentProfile" column="profileId"/>
 		</set>
