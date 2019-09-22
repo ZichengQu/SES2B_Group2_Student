@@ -11,16 +11,28 @@
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript">
 	$(function(){
-		var msg = strConvert(function(){/*
-${msg}
-	        */});
-		if(msg != null&&msg.length!=1){
-			alert(msg);
-		}
 		
-		function strConvert(fn){
-		    return fn.toString().split('\n').slice(1,-1).join('\n')+'\n';
-		}
+		
+		$("#button").click(function(){
+			var username = $("#username").val();
+			var password = $("#password").val();
+            $.ajax({
+                url:"student/login",
+                contentType:"application/json;charset=UTF-8",
+                data:'{"username":'+username+',"password":"'+password+'"}',
+                dataType:"text",//"json"
+                type:"post",
+                success:function(data){
+                	if(data == "success"){
+                		window.location.href = "MyInfo.jsp";
+                	} else{
+                		alert("Invalid account or password. Please try again.");
+                		$("#password").val("");
+                	}
+                }
+            });
+        });
+		
 	});
 	//<form action="MyInfo.html" method="get"><!--<form action="StuLogin" method="post">-->
 </script>
@@ -56,7 +68,7 @@ ${msg}
 	                                <a href="http://cookingfoodsworld.blogspot.in/" target="_blank">Log in</a>
 	                                 change url to next page
 	                            </p>-->
-	                    <input id="button" type="submit" value="Login"></>
+	                    <input id="button" type="button" value="Login"></>
 	                </form>
 	            </div>
 	        </div>
