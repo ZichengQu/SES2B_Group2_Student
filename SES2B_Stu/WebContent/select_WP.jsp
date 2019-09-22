@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -133,12 +135,19 @@
 		<div id="container">
             <div id="Popular">
                     <div id="cir1" class="circle">
-                    <img id="writingImg" src="img/writing.png" ></div>
+                    <a href="workshop/click?type=writ">
+                    <img id="writingImg" src="img/writing.png" >
+                    </a>
+                    </div>
                    
                     <div id="cir2" class="circle">
-                    <img id="writingImg" src="img/grammar-01.png" ></div>
+                    <a href="workshop/click?type=grammar">
+                    <img id="writingImg" src="img/grammar-01.png" >
+                    </a></div>
                     <div id="cir3" class="circle">
-                <img id="writingImg" src="img/speaking.png" ></div>
+                 <a href="workshop/click?type=speak">
+                <img id="writingImg" src="img/speaking.png" >
+                </a></div>
                 <div id="label"></div>
                 <div id="writing">Writing</div>
                 <div id="grammar">Grammar</div>
@@ -150,12 +159,17 @@
              <div id="selection">
 			
 			<select id="WPlist">
+			
                 <option >Please choose one skill set that you want to improve</option>
-			    <option  class="option" >Improve Your Grammar</option>
-			    <option class="option" >Improve Your Writing</option>
+                <c:forEach var="WPList" items="${workshop }">
+			    <option  class="option" value="${WPList.name }">${WPList.name }</option>
+			    
+			   <!--  <option class="option" >Improve Your Writing</option>
 			    <option class="option" >Improve Your Speaking</option>
-			    <option class="option" >U:Pass</option>
+			    <option class="option" >U:Pass</option> -->
+			    </c:forEach>
             </select>
+            
             <!-- <img id="arrow" src="img/arrowbelow.png" width="40" height="40"> -->
         </div>
 </div> 
