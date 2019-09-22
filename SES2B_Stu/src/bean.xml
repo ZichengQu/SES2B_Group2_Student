@@ -27,8 +27,11 @@
 	<bean id="workShop" class="com.bean.WorkShop"></bean>
 	<!-- Service -->
 	<bean id="studentService" class="com.service.StudentService"></bean>
+	<bean id="selectWPService" class="com.service.SelectWPService"></bean>
+	
 	<!-- Dao -->
 	<bean id="studentDao" class="com.dao.StudentDao"></bean>
+	<bean id="selectWPDao" class="com.dao.SelectWPDao"></bean>
 	<!-- Utils -->
 	<bean id="combineAttr" class="com.utils.CombineAttr"></bean>
 </beans>
