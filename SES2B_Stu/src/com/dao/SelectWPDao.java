@@ -12,7 +12,7 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import com.bean.WorkShop;
 
 public class SelectWPDao extends HibernateDaoSupport{
- 
+  
 	@Resource  
     public void setSessionFacotry(SessionFactory sessionFacotry) {  
         super.setSessionFactory(sessionFacotry);  
