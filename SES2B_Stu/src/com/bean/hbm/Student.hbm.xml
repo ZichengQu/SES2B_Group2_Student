@@ -18,7 +18,7 @@
 		<property name="dob"></property>
 		
 		<many-to-one name="studentProfile" unique="true" column="profileId" class="com.bean.StudentProfile" not-null="false" lazy="false"></many-to-one>
-		<set name="waitingLists" table="t_student_waitingList" lazy="false">
+		<set name="waitingLists" table="t_student_waitingList">
 			<key column="studentId"></key>
 			<many-to-many class="com.bean.WaitingList" column="waitingListId"/>
 		</set>
@@ -26,7 +26,7 @@
 			<key column="studentId"></key>
 			<one-to-many class="com.bean.ConfirmationEmail"/>
 		</set> -->
-		<set name="reminderEmails" lazy="false">
+		<set name="reminderEmails">
 			<key column="studentId"></key>
 			<one-to-many class="com.bean.ReminderEmail"/>
 		</set>

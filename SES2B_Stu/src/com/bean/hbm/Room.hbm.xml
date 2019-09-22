@@ -10,11 +10,11 @@
 		<property name="campus"></property>
 		<property name="level"></property>
 		<property name="roomNumber"></property>
-		<set name="workShops" lazy="false">
+		<set name="workShops">
 			<key column="roomId"></key>
 			<one-to-many class="com.bean.WorkShop"/>
 		</set>
-		<set name="sessions" lazy="false">
+		<set name="sessions">
 			<key column="roomId"></key>
 			<one-to-many class="com.bean.Session"/>
 		</set>
