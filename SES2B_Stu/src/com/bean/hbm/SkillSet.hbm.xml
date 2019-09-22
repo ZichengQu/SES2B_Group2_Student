@@ -10,7 +10,7 @@
 		<property name="name"></property>
 		<property name="shortName"></property>
 		<many-to-one name="admin" column="adminId" class="com.bean.Admin"></many-to-one>
-		<set name="workShops">
+		<set name="workShops" lazy="false">
 			<key column="skillSetId"></key>
 			<one-to-many class="com.bean.WorkShop"/>
 		</set>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
@@ -161,8 +161,8 @@
 			<select id="WPlist">
 			
                 <option >Please choose one skill set that you want to improve</option>
-                <c:forEach var="WPList" items="${workshop }">
-			    <option  class="option" value="${WPList.name }">${WPList.name }</option>
+                <c:forEach var="skillSet" items="${skillSets }">
+			    <option  class="option" value="${skillSet.name}">${skillSet.name }</option>
 			    
 			   <!--  <option class="option" >Improve Your Writing</option>
 			    <option class="option" >Improve Your Speaking</option>

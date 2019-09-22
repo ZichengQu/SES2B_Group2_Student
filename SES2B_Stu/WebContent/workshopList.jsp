@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -123,19 +126,22 @@
 						<th>Place avail.</th>
 						<th>Detail</th>
 					</tr>
+					<c:forEach var="SpecificWPList" items="${specificWorkshop }">
 					<tr>
-						<td>Improve Your Grammar 1</td>
-						<td>20/08/2019</td>
-						<td>20/08/2019</td>
-						<td>Tue</td>
-						<td>10:30-12:00</td>
-						<td style="text-align: center;">1</td>
-						<td style="text-align: center;">12</td>
+						<td>${SpecificWPList.name} </td>
+						<td><fmt:formatDate pattern="dd MMM yyyy" value="${SpecificWPList.startDate}"/></td>
+						<td><fmt:formatDate pattern="dd MMM yyyy" value="${SpecificWPList.endDate}"/></td>
+						<td>${SpecificWPList.days}</td>
+						<td><fmt:formatDate pattern="HH:mm" value="${SpecificWPList.startDate}"/></td>
+						<td style="text-align: center;">${SpecificWPList.noOfSessions}</td>
+						<td style="text-align: center;">${SpecificWPList.placeAvailable}</td>
 						<td style="text-align: center;">
 							<img src="img/more.png" onclick="checkDetails(1);" style="width: 20px;">
 						</td>
 					</tr>
-					<tr>
+					</c:forEach>
+					
+					<!-- <tr>
 						<td>Improve Your Grammar 2</td>
 						<td>20/08/2019</td>
 						<td>20/08/2019</td>
@@ -184,7 +190,7 @@
 						<td style="text-align: center;">1</td>
 						<td style="text-align: center;">12</td>
 						<td style="text-align: center;"><img src="img/more.png" style="width: 20px;"></td>
-					</tr>				
+					</tr>	 -->			
 				</table>
 			</div></div>
 		</div> 
