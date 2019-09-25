@@ -126,7 +126,7 @@
 						<th>Place avail.</th>
 						<th>Detail</th>
 					</tr>
-					<c:forEach var="SpecificWPList" items="${specificWorkshop }">
+					<%-- <c:forEach var="SpecificWPList" items="${specificWorkshop }">
 					<tr>
 						<td>${SpecificWPList.name} </td>
 						<td><fmt:formatDate pattern="dd MMM yyyy" value="${SpecificWPList.startDate}"/></td>
@@ -135,6 +135,21 @@
 						<td><fmt:formatDate pattern="HH:mm" value="${SpecificWPList.startDate}"/></td>
 						<td style="text-align: center;">${SpecificWPList.noOfSessions}</td>
 						<td style="text-align: center;">${SpecificWPList.placeAvailable}</td>
+						<td style="text-align: center;">
+							<img src="img/more.png" onclick="checkDetails(1);" style="width: 20px;">
+						</td>
+					</tr>
+					</c:forEach> --%>
+					
+					<c:forEach var="ssWPList" items="${ssWorkshop }">
+					<tr>
+						<td>${ssWPList.name} </td>
+						<td><fmt:formatDate pattern="dd MMM yyyy" value="${ssWPList.startDate}"/></td>
+						<td><fmt:formatDate pattern="dd MMM yyyy" value="${ssWPList.endDate}"/></td>
+						<td>${ssWPList.days}</td>
+						<td><fmt:formatDate pattern="HH:mm" value="${ssWPList.startDate}"/></td>
+						<td style="text-align: center;">${ssWPList.noOfSessions}</td>
+						<td style="text-align: center;">${ssWPList.placeAvailable}</td>
 						<td style="text-align: center;">
 							<img src="img/more.png" onclick="checkDetails(1);" style="width: 20px;">
 						</td>

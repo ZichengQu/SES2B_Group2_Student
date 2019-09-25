@@ -30,6 +30,12 @@ public class SelectWPService {
 		}
 		return skillSets;
 	}
+	
+	public SkillSet findssWShops(Integer id) {
+		
+		return selectWPDao.fSkillSet(id);
+	}
+	
 	public List<WorkShop> findSpecific(String type) {
 		
 		return selectWPDao.findSpecificWorkShops(type);

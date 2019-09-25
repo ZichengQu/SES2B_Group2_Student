@@ -18,6 +18,14 @@
 <script type="text/javascript" src="js/bootstrap.min.js" ></script>
 <script src="js/investorweb.js" type="text/javascript"></script>
 <script src="js/Scroll.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	$("#WPlist").change(function(){
+		window.location.href="workshop/selectss?skillsetId="+$(this).val();
+		/* document.getElementById("#WPlist").options.legth=0; */
+	});
+});
+</script>
 <body >
 <!--Header Starts-->
 <div class="Header H2">
@@ -157,12 +165,11 @@
         
              </div>
              <div id="selection">
-			
 			<select id="WPlist">
 			
-                <option >Please choose one skill set that you want to improve</option>
+                <option value="" selected>Please choose one skill set that you want to improve</option>
                 <c:forEach var="skillSet" items="${skillSets }">
-			    <option  class="option" value="${skillSet.name}">${skillSet.name }</option>
+			    <option  class="option" value="${skillSet.skillSetId}">${skillSet.name }</option>
 			    
 			   <!--  <option class="option" >Improve Your Writing</option>
 			    <option class="option" >Improve Your Speaking</option>
@@ -172,8 +179,8 @@
             
             <!-- <img id="arrow" src="img/arrowbelow.png" width="40" height="40"> -->
         </div>
-</div> 
-		</div>
+	</div> 
+	
 
 		<div id="footer" >
 		    <div class="footer_content">
