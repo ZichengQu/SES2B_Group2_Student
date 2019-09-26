@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSON;
 import com.bean.Session;
@@ -109,6 +111,16 @@ public class StudentController {
 			return "fail";
 		}
     }
+	
+	@RequestMapping("/imgUpload")
+	public String imgUpload(HttpServletRequest request,MultipartFile upload) throws Exception{
+		String filename = upload.getOriginalFilename();
+		
+		System.out.println(filename);
+		return null;
+		
+	}
+	
 	
 	private void upcomingPast(Set<WorkShop> workShops) {
 		upcoming = new HashSet<WorkShop>();

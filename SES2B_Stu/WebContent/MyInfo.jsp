@@ -15,6 +15,39 @@
 <!-- <script src="js/MyInfo.js" type="text/javascript"></script> -->
 <script>
 $(function(){
+	$("#photoImg").click(function(){
+		$("input[name='upload']:first").click();
+	});
+	$("input[name='upload']:first").bind('change', function () {
+		if(confirm("Change new photo?")==true){
+			var file = $(this).val();
+			var suffix = file.substr(file.lastIndexOf(".")+1);
+			if($(this).context.size>1024*500){
+				alert("Please choose a picture no more than 512KB.");
+				return false;
+			}else if(suffix=="png"||suffix=="jpg"){
+				$("#imgUpload").click();
+			}else{
+				alert("Please choose a valid photo!");
+				return false;
+			}
+		    console.log($(this));
+		}else{
+			alert("Cancel change");
+		}
+	    
+	    /* if(file.length>0){
+	        var suffix = file.substr(file.lastIndexOf("\\")+1);
+	        //alert(suffix);
+	        $("#fake_btn").hide();
+	        $("#fake_btn").after($("<span id='fileName'>"+suffix+"</span>"));
+	        var w = $("#fileName").width();
+	        var top = parseInt($('.dataTables_filter').offsetTop);//.css("right"));
+	        $('.dataTables_filter').css({'right':(top-20+w)+'px'});
+	    } */
+	});
+	
+	
 	onLoad();
 	edit();
 	save();
@@ -340,7 +373,11 @@ function strConvert(fn){
 		
 <div id="wrapper">
 	<div id="left">
-		<img id="profile" src="img/profile.jpg" />
+		<a id="photoImg"><img id="profile" src="img/profile.jpg" /></a>
+		<form style="display:none" action="student/imgUpload" method="post" enctype="multipart/form-data">
+			<input type="file" name="upload" value="edit" />
+			<input id="imgUpload" type="submit" value="edit"/>
+		</form>
 		<table id="fixedInfo" >
 			<tr>
 				<td class="cell">
