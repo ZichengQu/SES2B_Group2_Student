@@ -235,7 +235,7 @@ function strConvert(fn){
 				<a href="UtsHelpsHome.html" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
 				<a href="" class="header_liBlock ">About Helps</a>
 				<a href="# " class="header_liBlock ">Programs</a>
-				<a href="MyInfo.html " class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
+				<a href=" " class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
 				<a href="workshop/select" class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
 				<a href="# " class="header_liBlock "></a>
 				<a href="# " style="color:#444444;font-weight:600; " class="header_liBlock1 ">${student.firstName } ${student.lastName }</a>

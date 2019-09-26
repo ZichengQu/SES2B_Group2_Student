@@ -37,11 +37,11 @@ $(function(){
 				<a href="UtsHelpsHome.html" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
 				<a href="" class="header_liBlock ">About Helps</a>
 				<a href="# " class="header_liBlock ">Programs</a>
-				<a href="MyInfo.html " class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
-				<a href="Wp_book.html " class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
+				<a href=" " class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
+				<a href="workshop/select " class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
 				<a href="# " class="header_liBlock "></a>
-				<a href="# " style="color:#444444;font-weight:600; " class="header_liBlock ">ZICHENG QU</a>
-				<a href="stu_login.html" class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
+				<a href="# " style="color:#444444;font-weight:600; " class="header_liBlock ">${student.firstName } ${student.lastName }</a>
+				<a href="student/logoff" class="header_liBlock "><img  src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
 				<div style="clear: both; "></div>
 			</div>
 			<div class="header_rightBlock ">
@@ -79,8 +79,8 @@ $(function(){
 				<ul class="header_onList wid-4 ">
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-					<li><a href="MyInfo.html ">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
-					<li><a href="Bookings.html ">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
+					<li><a href="MyInfo.jsp" class="hoverRed">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
+					<li><a href="student/querySW" class="hoverRed">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
 				</ul>
 			</div>
 		</div>

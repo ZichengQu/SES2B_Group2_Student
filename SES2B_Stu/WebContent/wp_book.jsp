@@ -43,11 +43,11 @@
 				<a href="UtsHelpsHome.html" style="text-decoration: none;" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
 				<a href="" style="text-decoration: none;" class="header_liBlock ">About Helps</a>
 				<a href="# " style="text-decoration: none;" class="header_liBlock ">Programs</a>
-				<a href="MyInfo.html " style="text-decoration: none;" class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
-				<a href="Wp_book.html " style="text-decoration: none;" class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
+				<a href=" " style="text-decoration: none;" class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
+				<a href="workshop/select " style="text-decoration: none;" class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
 				<a href="# " style="text-decoration: none;" class="header_liBlock "></a>
-				<a href="# " style="color:#444444;font-weight:600;text-decoration: none; " class="header_liBlock1 ">ZICHENG QU</a>
-				<a href="stu_login.html" style="text-decoration: none;" class="header_liBlock1 "><img style="" src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
+				<a href="# " style="color:#444444;font-weight:600;text-decoration: none; " class="header_liBlock1 ">${student.firstName } ${student.lastName }</a>
+				<a href="student/logoff" style="text-decoration: none;" class="header_liBlock1 "><img style="" src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
 				<div style="clear: both; "></div>
 			</div>
 			<div class="header_rightBlock ">
@@ -85,8 +85,8 @@
 				<ul class="header_onList wid-4 ">
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-					<li><a href="MyInfo.html " class="hoverRed" style="text-decoration: none;">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
-					<li><a href="Bookings.html " class="hoverRed" style="text-decoration: none;">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
+					<li><a href="MyInfo.jsp" class="hoverRed">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
+					<li><a href="student/querySW" class="hoverRed">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
 				</ul>
 			</div>
 		</div>

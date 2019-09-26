@@ -36,7 +36,7 @@
 				async: false,
 				success : function(data) {
 					if (data == "success") {
-						alert("successful");
+						/* alert("successful"); */
 						window.location.href = "workShopDetail.jsp";
 					} else {
 						alert("failed");
@@ -62,14 +62,14 @@
 						class="header_liBlock current ">Home</a> <a href=""
 						style="text-decoration: none;" class="header_liBlock ">About
 						Helps</a> <a href="# " style="text-decoration: none;"
-						class="header_liBlock ">Programs</a> <a href="MyInfo.html "
+						class="header_liBlock ">Programs</a> <a href=" "
 						style="text-decoration: none;" class="header_liBlock ">My Info</a>
-					<a href="Wp_book.html " style="text-decoration: none;"
+					<a href="workshop/select " style="text-decoration: none;"
 						class="header_liBlock ">Registration</a> <a href="# "
 						style="text-decoration: none;" class="header_liBlock "></a> <a
 						href="# "
 						style="color: #444444; font-weight: 600; text-decoration: none;"
-						class="header_liBlock1 ">ZICHENG QU</a> <a href="stu_login.html"
+						class="header_liBlock1 ">${student.firstName } ${student.lastName }</a> <a href="student/logoff"
 						style="text-decoration: none;" class="header_liBlock1 "><img
 						style="" src="img/logoff.png " alt=" " width="20 " height="20 "></a>
 					<div style="clear: both;"></div>
@@ -110,10 +110,8 @@
 					<ul class="header_onList wid-4 ">
 						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-						<li><a href="MyInfo.html " class="hoverRed"
-							style="text-decoration: none;">Profile</a></li>
-						<li><a href="Bookings.html " class="hoverRed"
-							style="text-decoration: none;">Bookings</a></li>
+						<li><a href="MyInfo.jsp" class="hoverRed">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
+					<li><a href="student/querySW" class="hoverRed">Bookings</a></li>
 					</ul>
 				</div>
 			</div>

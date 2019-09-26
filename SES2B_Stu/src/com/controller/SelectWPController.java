@@ -14,15 +14,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.bean.SkillSet;
+import com.bean.Student;
 import com.bean.WorkShop;
 import com.service.SelectWPService;
+import com.service.StudentService;
+import com.utils.MailUtils;
 
 @Controller
 @RequestMapping("/workshop")
-@SessionAttributes(value = { "skillSets", "specificWorkshop", "ssWorkshop", "detailWorkshop" })
+@SessionAttributes(value = { "skillSets", "specificWorkshop", "ssWorkshop", "detailWorkshop", "student" })
 public class SelectWPController {
 	@Resource(name = "selectWPService")
 	private SelectWPService selectWPService;
+	
+	@Resource(name = "studentService")
+	private StudentService studentService;
 
 	@RequestMapping("/select")
 	public String selection(Model model) {
@@ -61,4 +67,21 @@ public class SelectWPController {
 		}
 
 	}
+	
+	@RequestMapping("/book")
+	public String book(String workshopName,  ModelMap modelMap) {
+		System.out.println("testtest");
+		Student student = (Student) modelMap.get("student");
+		System.out.println(student.getStudentId());
+		try {
+			String toEmail = student.getStudentId()+"@student.uts.edu.au";
+			System.out.println(toEmail);
+			MailUtils.sendMail(toEmail, "Book Successfully!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "success";
+		}
+
 }
+
