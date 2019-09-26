@@ -1,5 +1,6 @@
 package com.controller;
 
+import java.io.File;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Map;
@@ -28,7 +29,7 @@ import com.utils.MailUtils;
 
 @Controller
 @RequestMapping("/student")
-@SessionAttributes(value = {"student","profile","sessions","workShops","upcoming","past"})
+@SessionAttributes(value = {"student","profile","sessions","workShops","upcoming","past","filename"})
 public class StudentController {
 
 	@Resource(name="studentService")
@@ -47,6 +48,8 @@ public class StudentController {
         	model.addAttribute("student",student);
         	StudentProfile studentProfile = student.getStudentProfile();
         	model.addAttribute("profile",studentProfile);
+        	String filename = student.getStudentId()+".png";
+            model.addAttribute("filename", filename);
             //return JSON.parse("{result:'success'}");
             return "success";
         } else {
@@ -113,11 +116,19 @@ public class StudentController {
     }
 	
 	@RequestMapping("/imgUpload")
-	public String imgUpload(HttpServletRequest request,MultipartFile upload) throws Exception{
-		String filename = upload.getOriginalFilename();
-		
-		System.out.println(filename);
-		return null;
+	public String imgUpload(HttpServletRequest request,MultipartFile upload,Model model, ModelMap modelMap) throws Exception{
+		Student student = (Student)modelMap.get("student");
+		//String path = request.getSession().getServletContext().getRealPath("/uploads/");//上传的位置
+		String path=request.getRealPath("/upload");
+		System.out.println("Path: "+path);
+		File file = new File(path);
+        if(!file.exists()){//判断，该路径是否存在
+            file.mkdirs();//若不存在，则创建该文件夹
+        }
+        String filename = student.getStudentId()+".png";
+        model.addAttribute("filename", filename);
+        upload.transferTo(new File(path,filename));//完成文件上传
+        return "redirect:/MyInfo.jsp";
 		
 	}
 	

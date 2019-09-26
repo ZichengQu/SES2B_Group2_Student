@@ -10,6 +10,14 @@
 <link href="css/investorstyle.css" rel="stylesheet" type="text/css">
 <link href="css/header.css" rel="stylesheet"/>
 <link href="css/MyInfo.css" rel="stylesheet"/>
+<style type="text/css">
+	#profile{ 
+	    margin-top: 30px; 
+	    width:80px; 
+	    height:80px; 
+	    border-radius:200px; 
+	}
+</style>
 <script src="js/investorweb.js" type="text/javascript"></script>
 <script src="js/Scroll.js" type="text/javascript"></script>
 <!-- <script src="js/MyInfo.js" type="text/javascript"></script> -->
@@ -254,6 +262,9 @@ function edit(){
 function strConvert(fn){
     return fn.toString().split('\n').slice(1,-1).join('\n')+'\n';
 }
+
+
+
 </script>
 </head>
 <body>
@@ -373,7 +384,7 @@ function strConvert(fn){
 		
 <div id="wrapper">
 	<div id="left">
-		<a id="photoImg"><img id="profile" src="img/profile.jpg" /></a>
+		<a id="photoImg"><img id="profile" src="${pageContext.request.contextPath }/upload/${filename}" onerror="this.src='img/defaultProfile.png'"/></a>
 		<form style="display:none" action="student/imgUpload" method="post" enctype="multipart/form-data">
 			<input type="file" name="upload" value="edit" />
 			<input id="imgUpload" type="submit" value="edit"/>
