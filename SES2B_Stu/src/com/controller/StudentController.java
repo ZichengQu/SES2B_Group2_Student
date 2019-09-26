@@ -118,8 +118,8 @@ public class StudentController {
 	@RequestMapping("/imgUpload")
 	public String imgUpload(HttpServletRequest request,MultipartFile upload,Model model, ModelMap modelMap) throws Exception{
 		Student student = (Student)modelMap.get("student");
-		//String path = request.getSession().getServletContext().getRealPath("/uploads/");//上传的位置
-		String path=request.getRealPath("/upload");
+		String path = request.getSession().getServletContext().getRealPath("/upload/");
+		//String path=request.getRealPath("/upload");
 		System.out.println("Path: "+path);
 		File file = new File(path);
         if(!file.exists()){//判断，该路径是否存在
