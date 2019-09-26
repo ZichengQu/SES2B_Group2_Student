@@ -152,6 +152,15 @@ public class WorkShop {
 	public void setStudents(Set<Student> students) {
 		this.students = students;
 	}
+	@Override
+	public String toString() {
+		return "WorkShop [workShopId=" + workShopId + ", name=" + name + ", startDate=" + startDate + ", endDate="
+				+ endDate + ", days=" + days + ", maximumPlace=" + maximumPlace + ", placeAvailable=" + placeAvailable
+				+ ", noOfSessions=" + noOfSessions + ", targetGroup=" + targetGroup + ", description=" + description
+				+ ", admin=" + admin + ", room=" + room + ", skillSet=" + skillSet + ", confirmationEmails="
+				+ confirmationEmails + ", attendances=" + attendances + ", reports=" + reports + ", students="
+				+ students + "]";
+	}
 	
 	
 	
