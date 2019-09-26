@@ -63,7 +63,7 @@ $(function() {
 				src="img/uts_logo.png "></a>
 			<div class="header_contentBlock ">
 				<div class="header_ulBlock ">
-					<a href="UtsHelpsHome.html" style="text-decoration: none;"
+					<a href="Home.jsp" style="text-decoration: none;"
 						class="header_liBlock current ">Home</a> <a href=""
 						style="text-decoration: none;" class="header_liBlock ">About
 						Helps</a> <a href="# " style="text-decoration: none;"

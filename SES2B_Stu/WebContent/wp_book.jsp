@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Bookings</title>
 <link rel="shortcut icon" href="#" type="image/x-icon">
-<link href="css/investorstyle.css" rel="stylesheet" type="text/css">
+<!-- <link href="css/investorstyle.css" rel="stylesheet" type="text/css"> -->
 <link href="css/WpBook.css" rel="stylesheet"/>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link href="css/header.css" rel="stylesheet"/>

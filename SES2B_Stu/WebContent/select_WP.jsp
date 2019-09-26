@@ -10,8 +10,8 @@
 <meta charset="UTF-8">
 <title>Bookings</title>
 <link rel="shortcut icon" href="#" type="image/x-icon">
-<link href="css/investorstyle.css" rel="stylesheet" type="text/css">
-
+<!-- <link href="css/investorstyle.css" rel="stylesheet" type="text/css"> -->
+<link href="css/header.css" rel="stylesheet" />
 <link href="css/select_WP.css" rel="stylesheet"/>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -34,14 +34,14 @@ $(function(){
 		<a href="# class=" header_logo "><img id="uts_logo " src="img/uts_logo.png "></a>
 		<div class="header_contentBlock ">
 			<div class="header_ulBlock ">
-				<a href="UtsHelpsHome.html" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
-				<a href="" class="header_liBlock ">About Helps</a>
-				<a href="# " class="header_liBlock ">Programs</a>
-				<a href=" " class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
-				<a href="workshop/select " class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
-				<a href="# " class="header_liBlock "></a>
-				<a href="# " style="color:#444444;font-weight:600; " class="header_liBlock ">${student.firstName } ${student.lastName }</a>
-				<a href="student/logoff" class="header_liBlock "><img  src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
+				<a href="Home.jsp" style="text-decoration: none;" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
+				<a href="" style="text-decoration: none;" class="header_liBlock ">About Helps</a>
+				<a href="# " style="text-decoration: none;" class="header_liBlock ">Programs</a>
+				<a href=" " style="text-decoration: none;" class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
+				<a href="workshop/select " style="text-decoration: none;" class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
+				<a href="# " style="text-decoration: none;" class="header_liBlock "></a>
+				<a href="# " style="color:#444444;font-weight:600; text-decoration: none; " class="header_liBlock ">${student.firstName } ${student.lastName }</a>
+				<a href="student/logoff" style="text-decoration: none;" class="header_liBlock "><img  src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
 				<div style="clear: both; "></div>
 			</div>
 			<div class="header_rightBlock ">
@@ -60,9 +60,9 @@ $(function(){
 			<div class="BlockBg "></div>
 			<div class="header_onBlockIn ">
 				<ul class="header_onList wid-2 ">
-					<li><a href="# ">FAQ</a></li>
-					<li><a href="# ">...</a></li>
-					<li><a href="# ">...</a></li>
+					<li><a style="text-decoration: none;" href="# ">FAQ</a></li>
+					<li><a style="text-decoration: none;" href="# ">...</a></li>
+					<li><a style="text-decoration: none;" href="# ">...</a></li>
 				</ul>
 			</div>
 		</div>
@@ -79,8 +79,8 @@ $(function(){
 				<ul class="header_onList wid-4 ">
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-					<li><a href="MyInfo.jsp" class="hoverRed">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
-					<li><a href="student/querySW" class="hoverRed">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
+					<li><a href="MyInfo.jsp" style="text-decoration: none;" class="hoverRed">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
+					<li><a href="student/querySW" style="text-decoration: none;" class="hoverRed">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
 				</ul>
 			</div>
 		</div>

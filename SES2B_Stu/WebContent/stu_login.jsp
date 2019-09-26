@@ -22,7 +22,7 @@
                 type:"post",
                 success:function(data){
                 	if(data == "success"){
-                		window.location.href = "MyInfo.jsp";
+                		window.location.href = "Home.jsp";
                 	} else{
                 		alert("Invalid account or password. Please try again.");
                 		$("#password").val("");

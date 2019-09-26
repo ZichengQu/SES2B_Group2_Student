@@ -7,9 +7,10 @@
 <title>My Information</title>
 <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
 <link rel="shortcut icon" href="#" type="image/x-icon">
-<link href="css/investorstyle.css" rel="stylesheet" type="text/css">
+<!-- <link href="css/investorstyle.css" rel="stylesheet" type="text/css"> -->
 <link href="css/header.css" rel="stylesheet"/>
 <link href="css/MyInfo.css" rel="stylesheet"/>
+
 <script src="js/investorweb.js" type="text/javascript"></script>
 <script src="js/Scroll.js" type="text/javascript"></script>
 <!-- <script src="js/MyInfo.js" type="text/javascript"></script> -->
@@ -232,7 +233,7 @@ function strConvert(fn){
 		<a href="# class=" header_logo "><img id="uts_logo " src="img/uts_logo.png "></a>
 		<div class="header_contentBlock ">
 			<div class="header_ulBlock ">
-				<a href="UtsHelpsHome.html" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
+				<a href="Home.jsp" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
 				<a href="" class="header_liBlock ">About Helps</a>
 				<a href="# " class="header_liBlock ">Programs</a>
 				<a href=" " class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->

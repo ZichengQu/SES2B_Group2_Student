@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Bookings</title>
 <link rel="shortcut icon" href="#" type="image/x-icon">
-<link href="css/investorstyle.css" rel="stylesheet" type="text/css">
+<!-- <link href="css/investorstyle.css" rel="stylesheet" type="text/css"> -->
 <link href="css/Bookings.css" rel="stylesheet"/>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link href="css/header.css" rel="stylesheet"/>
@@ -48,7 +48,7 @@
 		<a href="# class=" header_logo "><img id="uts_logo " src="img/uts_logo.png "></a>
 		<div class="header_contentBlock ">
 			<div class="header_ulBlock ">
-				<a href="UtsHelpsHome.html" style="text-decoration: none;" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
+				<a href="Home.jsp" style="text-decoration: none;" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
 				<a href="" style="text-decoration: none;" class="header_liBlock ">About Helps</a>
 				<a href="# " style="text-decoration: none;" class="header_liBlock ">Programs</a>
 				<a href=" " style="text-decoration: none;" class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->

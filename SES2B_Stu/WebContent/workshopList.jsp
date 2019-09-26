@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Workshop List</title>
 <link rel="shortcut icon" href="#" type="image/x-icon">
-<link href="css/investorstyle.css" rel="stylesheet" type="text/css">
+<!-- <link href="css/investorstyle.css" rel="stylesheet" type="text/css"> -->
 <link href="css/WorkshopList.css" rel="stylesheet" />
 <link href="css/header.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -58,15 +58,17 @@
 				src="img/uts_logo.png "></a>
 			<div class="header_contentBlock ">
 				<div class="header_ulBlock ">
-					<a href="UtsHelpsHome.html" style="text-decoration: none;"
+					<a href="Home.jsp" style="text-decoration: none;"
 						class="header_liBlock current ">Home</a> <a href=""
 						style="text-decoration: none;" class="header_liBlock ">About
 						Helps</a> <a href="# " style="text-decoration: none;"
 						class="header_liBlock ">Programs</a> <a href=" "
 						style="text-decoration: none;" class="header_liBlock ">My Info</a>
 					<a href="workshop/select " style="text-decoration: none;"
-						class="header_liBlock ">Registration</a> <a href="# "
-						style="text-decoration: none;" class="header_liBlock "></a> <a
+						class="header_liBlock ">Registration</a> 
+						<a href="# "
+						style="text-decoration: none;" class="header_liBlock "></a>
+						 <a
 						href="# "
 						style="color: #444444; font-weight: 600; text-decoration: none;"
 						class="header_liBlock1 ">${student.firstName } ${student.lastName }</a> <a href="student/logoff"
