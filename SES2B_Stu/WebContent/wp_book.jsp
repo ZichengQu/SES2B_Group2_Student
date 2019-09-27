@@ -23,6 +23,27 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	$(function(){
+		current();
+		//Get page name without suffix
+		function pageName(){
+		    var a = location.href;
+		    var b = a.split("/");
+		    var c = b.slice(b.length-1, b.length).toString(String).split(".");
+		    return c.slice(0, 1);
+		}
+		//Show red underline in the navigation bar
+		function current(){
+			$("a.header_liBlock").attr("class","header_liBlock");
+			var pName = pageName();
+			if(pName[0]=="Home"){
+				$("a.header_liBlock:eq(0)").attr("class","header_liBlock current");
+			}else if(pName[0]=="MyInfo"||pName[0]=="Bookings"){
+				$("a.header_liBlock:eq(3)").attr("class","header_liBlock current");
+			}else if(pName[0]=="select_WP"||pName[0]=="workshopList"||pName[0]=="workShopDetail"||pName[0]=="wp_book"){
+				$("a.header_liBlock:eq(4)").attr("class","header_liBlock current");
+			}
+		}
+		
 		$('#triggerBtn').click();
 			$('#myModal').on('shown.bs.modal', function () {
 		  	$('#myInput').focus();
@@ -56,7 +77,7 @@
 				<a href="UtsHelpsHome.html" style="text-decoration: none;" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
 				<a href="" style="text-decoration: none;" class="header_liBlock ">About Helps</a>
 				<a href="# " style="text-decoration: none;" class="header_liBlock ">Programs</a>
-				<a href=" " style="text-decoration: none;" class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
+				<a href="MyInfo.jsp" style="text-decoration: none;" class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
 				<a href="wp_book.jsp" style="text-decoration: none;" class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
 				<a href="# " style="text-decoration: none;" class="header_liBlock "></a>
 				<a href="# " style="color:#444444;font-weight:600;text-decoration: none; " class="header_liBlock1 ">${student.firstName } ${student.lastName }</a>

@@ -42,6 +42,26 @@
 			setInterval("change()",3000);
 			
 			$(function(){
+				current();
+				//Get page name without suffix
+				function pageName(){
+				    var a = location.href;
+				    var b = a.split("/");
+				    var c = b.slice(b.length-1, b.length).toString(String).split(".");
+				    return c.slice(0, 1);
+				}
+				//Show red underline in the navigation bar
+				function current(){
+					$("a.header_liBlock").attr("class","header_liBlock");
+					var pName = pageName();
+					if(pName[0]=="Home"){
+						$("a.header_liBlock:eq(0)").attr("class","header_liBlock current");
+					}else if(pName[0]=="MyInfo"||pName[0]=="Bookings"){
+						$("a.header_liBlock:eq(3)").attr("class","header_liBlock current");
+					}else if(pName[0]=="select_WP"||pName[0]=="workshopList"||pName[0]=="workShopDetail"||pName[0]=="wp_book"){
+						$("a.header_liBlock:eq(4)").attr("class","header_liBlock current");
+					}
+				}
 				//$(".commonheader").load("Header.html");
 			});
 			
@@ -76,13 +96,13 @@
 		<a href="# class=" header_logo "><img id="uts_logo " src="img/uts_logo.png "></a>
 		<div class="header_contentBlock ">
 			<div class="header_ulBlock ">
-				<a href="Home.jsp" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
-				<a href="" class="header_liBlock ">About Helps</a>
-				<a href="# " class="header_liBlock ">Programs</a>
-				<a href=" " class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
-				<a href="wp_book.jsp " class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
-				<a href="# " class="header_liBlock "></a>
-				<a href="# " style="color:#444444;font-weight:600; text-decoration: none;" class="header_liBlock ">${student.firstName } ${student.lastName }</a>
+				<a href="#" class="header_liBlock current ">Home</a> <!--http://www.rainbow.cn/web/investment/index?menuId=178-->
+				<a href="#" class="header_liBlock ">About Helps</a>
+				<a href="#" class="header_liBlock ">Programs</a>
+				<a href="MyInfo.jsp" class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
+				<a href="wp_book.jsp" class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
+				<a href="#" class="header_liBlock "></a>
+				<a href="#" style="color:#444444;font-weight:600; text-decoration: none;" class="header_liBlock ">${student.firstName } ${student.lastName }</a>
 				<a href="student/logoff" class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->
 				<div style="clear: both; "></div>
 			</div>
@@ -121,7 +141,7 @@
 				<ul class="header_onList wid-4 ">
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-					<li><a href="MyInfo.jsp ">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
+					<li><a href="MyInfo.jsp">Profile</a></li><!--<li><a href="# ">Profile</a></li>-->
 					<li><a href="student/querySW ">Bookings</a></li><!--<li><a href="# ">Bookings</a></li>-->
 				</ul>
 			</div>
