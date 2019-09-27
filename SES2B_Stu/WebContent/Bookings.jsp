@@ -52,7 +52,7 @@
 				<a href="" style="text-decoration: none;" class="header_liBlock ">About Helps</a>
 				<a href="# " style="text-decoration: none;" class="header_liBlock ">Programs</a>
 				<a href=" " style="text-decoration: none;" class="header_liBlock ">My Info</a><!--<a href="# " class="header_liBlock ">My Info</a>-->
-				<a href="workshop/select " style="text-decoration: none;" class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
+				<a href="wp_book.jsp " style="text-decoration: none;" class="header_liBlock ">Registration</a><!--<a href="# " class="header_liBlock ">Registration</a>-->
 				<a href="# " style="text-decoration: none;" class="header_liBlock "></a>
 				<a href="# " style="color:#444444;font-weight:600;text-decoration: none; " class="header_liBlock1 ">${student.firstName } ${student.lastName }</a>
 				<a href="student/logoff" style="text-decoration: none;" class="header_liBlock1 "><img style="" src="img/logoff.png " alt=" " width="20 " height="20 "></a><!--<a href="# " class="header_liBlock "><img style="padding-top: 30px; " src="img/logoff.png " alt=" " width="20 " height="20 "></a>-->

@@ -64,7 +64,7 @@
 						Helps</a> <a href="# " style="text-decoration: none;"
 						class="header_liBlock ">Programs</a> <a href=" "
 						style="text-decoration: none;" class="header_liBlock ">My Info</a>
-					<a href="workshop/select " style="text-decoration: none;"
+					<a href="wp_book.jsp " style="text-decoration: none;"
 						class="header_liBlock ">Registration</a> 
 						<a href="# "
 						style="text-decoration: none;" class="header_liBlock "></a>
