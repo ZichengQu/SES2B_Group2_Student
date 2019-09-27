@@ -1,11 +1,13 @@
 package com.controller;
 
+import java.io.File;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSON;
 import com.bean.Session;
@@ -26,7 +29,9 @@ import com.utils.MailUtils;
 
 @Controller
 @RequestMapping("/student")
-@SessionAttributes(value = { "student", "profile", "sessions", "workShops", "upcoming", "past" })
+
+@SessionAttributes(value = {"student","profile","sessions","workShops","upcoming","past","filename"})
+
 public class StudentController {
 
 	@Resource(name = "studentService")
@@ -40,16 +45,20 @@ public class StudentController {
 	@RequestMapping("/login")
 	public @ResponseBody String stuLogin(@RequestBody String body, Model model) {
 		Map map = JSON.parseObject(body);
-		Student student = studentService.login((Integer) map.get("username"), (String) map.get("password"));
-		if (student != null) {
-			model.addAttribute("student", student);
-			StudentProfile studentProfile = student.getStudentProfile();
-			model.addAttribute("profile", studentProfile);
-			// return JSON.parse("{result:'success'}");
-			return "success";
-		} else {
-			// return JSON.parse("{result:'fail'}");
-			return "fail";
+
+        Student student = studentService.login((Integer)map.get("username"),(String)map.get("password"));
+        if(student!=null) {
+        	model.addAttribute("student",student);
+        	StudentProfile studentProfile = student.getStudentProfile();
+        	model.addAttribute("profile",studentProfile);
+        	String filename = student.getStudentId()+".png";
+            model.addAttribute("filename", filename);
+            //return JSON.parse("{result:'success'}");
+            return "success";
+        } else {
+        	//return JSON.parse("{result:'fail'}");
+        	return "fail";
+
 		}
 	}
 
@@ -108,7 +117,25 @@ public class StudentController {
 		} else {
 			return "fail";
 		}
+    }
+	
+	@RequestMapping("/imgUpload")
+	public String imgUpload(HttpServletRequest request,MultipartFile upload,Model model, ModelMap modelMap) throws Exception{
+		Student student = (Student)modelMap.get("student");
+		String path = request.getSession().getServletContext().getRealPath("/upload/");
+		//String path=request.getRealPath("/upload");
+		System.out.println("Path: "+path);
+		File file = new File(path);
+        if(!file.exists()){//�жϣ���·���Ƿ����
+            file.mkdirs();//�������ڣ��򴴽����ļ���
+        }
+        String filename = student.getStudentId()+".png";
+        model.addAttribute("filename", filename);
+        upload.transferTo(new File(path,filename));//����ļ��ϴ�
+        return "redirect:/MyInfo.jsp";
+		
 	}
+	
 
 	private void upcomingPast(Set<WorkShop> workShops) {
 		upcoming = new HashSet<WorkShop>();
