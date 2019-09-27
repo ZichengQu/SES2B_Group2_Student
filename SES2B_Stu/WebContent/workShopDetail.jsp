@@ -47,8 +47,6 @@
 	$(function() {
 		$("[id^='book_']").click(function() {
 			var workshopName = this.id.split("_")[1];
-
-			alert("Please check your email for more details");
 			$.ajax({
 				url : "workshop/book",
 				type : "post",
@@ -56,9 +54,10 @@
 				dataType : "text",
 				success : function(data) {
 					if (data == "success") {
-
-					} else {
-						alert("failed");
+						alert("Book successfully. Please check your email for more details!");
+					}
+					if (data =="false"){
+						alert("You have already booked before!");
 					}
 				}
 			});

@@ -69,18 +69,23 @@ public class SelectWPController {
 	}
 	
 	@RequestMapping("/book")
-	public String book(String workshopName,  ModelMap modelMap) {
-		System.out.println("testtest");
-		Student student = (Student) modelMap.get("student");
-		System.out.println(student.getStudentId());
-		try {
-			String toEmail = student.getStudentId()+"@student.uts.edu.au";
-			System.out.println(toEmail);
-			MailUtils.sendMail(toEmail, "Book Successfully!");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "success";
+	public @ResponseBody String book(String workshopName,  ModelMap modelMap) {
+			Student student = (Student) modelMap.get("student");
+			WorkShop workShop = (WorkShop) modelMap.get("detailWorkshop");
+			boolean flag = selectWPService.bookWorkShop(student, workShop);
+			System.out.println(flag);
+			if(flag) {
+				try {
+					String toEmail = student.getStudentId()+"@student.uts.edu.au";
+					MailUtils.sendMail(toEmail, "Book Successfully!");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				return "success";
+			}else {
+				return "false";
+			}
+		
 		}
 
 }

@@ -3,6 +3,7 @@ package com.dao;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.mail.Flags.Flag;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
@@ -68,6 +69,20 @@ public class SelectWPDao extends HibernateDaoSupport {
 			e.printStackTrace();// TODO: handle exception
 		}
 		return workShop;
+	}
+	
+	public boolean bookWorkShop(Student student, WorkShop workShop) {
+		boolean flag = true;
+		try {
+			student.getWorkShops().add(workShop);
+			this.getHibernateTemplate().update(student);
+			//this.getHibernateTemplate().saveOrUpdate(studentProfile);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			flag = false;
+		}
+		return flag;
 	}
 
 }

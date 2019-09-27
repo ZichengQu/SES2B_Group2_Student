@@ -227,7 +227,7 @@
 						</tr>
 						<c:forEach var="workShop" items="${upcoming }">
 						  	<tr align="left">
-							  	<td>${workshop.name }</td>
+							  	<td>${workShop.name }</td>
 							  	<td><fmt:formatDate pattern="dd MMM yyyy" value="${workShop.startDate }" /></td>
 							  	<td><fmt:formatDate pattern="dd MMM yyyy" value="${workShop.endDate }" /></td>
 							  	<td>${workShop.days }</td>

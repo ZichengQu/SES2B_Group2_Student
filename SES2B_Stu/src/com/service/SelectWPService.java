@@ -2,6 +2,7 @@ package com.service;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -10,6 +11,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bean.SkillSet;
+import com.bean.Student;
 import com.bean.WorkShop;
 import com.dao.SelectWPDao;
 //import com.sun.tools.sjavac.pubapi.PubApi;
@@ -47,6 +49,24 @@ public class SelectWPService {
 	public WorkShop finddetailWP(Integer id) {
 
 		return selectWPDao.findDetail(id);
+	}
+	
+	public boolean bookWorkShop(Student student, WorkShop workShop) {
+		Set<WorkShop> workShops = student.getWorkShops();
+		boolean flag = true;
+		for(WorkShop ws:workShops) {
+			if (workShop==null) {
+				flag = false;
+				break;
+			}else if (workShop.getName().equalsIgnoreCase(ws.getName())) {
+				flag = false;
+				break;
+			}
+		}
+		if(flag) {
+			flag = selectWPDao.bookWorkShop(student, workShop);
+		}
+		return flag;
 	}
 
 }
