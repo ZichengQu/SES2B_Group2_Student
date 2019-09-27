@@ -26,6 +26,7 @@ import com.bean.StudentProfile;
 import com.bean.WorkShop;
 import com.service.StudentService;
 import com.utils.MailUtils;
+import com.utils.SESEmail;
 
 @Controller
 @RequestMapping("/student")
@@ -109,7 +110,8 @@ public class StudentController {
 			model.addAttribute("upcoming", upcoming);
 			try {
 				String toEmail = student.getStudentId() + "@student.uts.edu.au";
-				MailUtils.sendMail(toEmail, "Cancel Successfully!");
+				//MailUtils.sendMail(toEmail, "Cancel Successfully!");
+				SESEmail.sendMail("SES2B UTSHelps", "Cancel Successfully!", toEmail);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

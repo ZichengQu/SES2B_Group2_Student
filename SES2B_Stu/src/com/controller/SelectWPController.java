@@ -19,6 +19,7 @@ import com.bean.WorkShop;
 import com.service.SelectWPService;
 import com.service.StudentService;
 import com.utils.MailUtils;
+import com.utils.SESEmail;
 
 @Controller
 @RequestMapping("/workshop")
@@ -77,7 +78,8 @@ public class SelectWPController {
 			if(flag) {
 				try {
 					String toEmail = student.getStudentId()+"@student.uts.edu.au";
-					MailUtils.sendMail(toEmail, "Book Successfully!");
+					//MailUtils.sendMail(toEmail, "Book Successfully!");
+					SESEmail.sendMail("SES2B UTSHelps", "Book Successfully!", toEmail);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
