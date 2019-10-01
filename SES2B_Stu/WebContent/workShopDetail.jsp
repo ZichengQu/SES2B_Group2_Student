@@ -149,7 +149,7 @@
 	<div id="wrapper">
 		<div id="container">
 
-			<div id="seName">Improve Your Grammar</div>
+			<div id="seName">Workshop Details</div>
 			<div id="Tri1" class="triangle-left"></div>
 
 
